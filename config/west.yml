@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: carrefinho
+      url-base: https://github.com/carrefinho
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3          # pinned: the Forager module targets ZMK v0.3
+      import: app/west.yml
+    - name: forager-zmk-module
+      remote: carrefinho
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      revision: v0.3-branch
+  self:
+    path: config
