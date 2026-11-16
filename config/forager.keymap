@@ -2,10 +2,10 @@
  * Forager 34-key — Dawid's layout
  *
  * Thumbs (tap / hold), left to right:
- *   30 Tab  / NUM   (left outer)           -> numpad on the right hand
- *   31 Bksp / SYM   (left inner, resting)  -> brackets on the right hand, operators on the left
- *   32 Spc  / NAV   (right inner, resting) -> Vim arrows on the right hand (same-hand, by choice)
- *   33 Ent  / FUN   (right outer)          -> F-keys on the left hand (same shape as the numpad)
+ *   30 Bksp / SYM   (left outer, resting)  -> brackets on the right hand, operators on the left
+ *   31 Tab  / NUM   (left inner)           -> numpad on the right hand
+ *   32 Ent  / FUN   (right inner)          -> F-keys on the left hand (same shape as the numpad)
+ *   33 Spc  / NAV   (right outer, resting) -> Vim arrows on the right hand (same-hand, by choice)
  *
  * Space/NAV is tap-preferred with a prior-idle guard, so fast typing never
  * turns a Space into a silent cursor jump.
@@ -125,14 +125,14 @@
         };
         combo_altgr {
             timeout-ms = <50>;
-            key-positions = <30 31>;        /* both left thumbs (Tab + Bksp): one-shot AltGr -> ą ę ś ć ż ź ł ó ń */
+            key-positions = <30 31>;        /* both left thumbs: one-shot AltGr -> ą ę ś ć ż ź ł ó ń */
             bindings = <&sk RALT>;
             layers = <BASE>;
         };
         combo_launcher {
             timeout-ms = <50>;
             require-prior-idle-ms = <150>;
-            key-positions = <31 32>;        /* both inner thumbs (Bksp + Space): Ctrl+Space, as on the Glove80 */
+            key-positions = <31 32>;        /* both inner thumbs: Ctrl+Space, as on the Glove80 */
             bindings = <&kp LC(SPACE)>;
             layers = <BASE>;
         };
@@ -175,7 +175,7 @@
             &kp Q          &kp W          &kp E          &kp R          &kp T             &kp Y      &kp U          &kp I          &kp O          &kp P
             &hml LGUI A    &hml LALT S    &hml LCTRL D   &hml LSHFT F   &kp G             &kp H      &hmr RSHFT J   &hmr RCTRL K   &hmr LALT L    &hmr RGUI SEMI
             &kp Z          &kp X          &kp C          &kp V          &kp B             &kp N      &kp M          &kp COMMA      &kp DOT        &kp FSLH
-                                          &lt_th NUM TAB &bs_sym SYM 0                    &lt_spc NAV SPACE  &lt_th FUN RET
+                                          &bs_sym SYM 0  &lt_th NUM TAB                   &lt_th FUN RET  &lt_spc NAV SPACE
             >;
         };
 
@@ -185,7 +185,7 @@
             &none          &none          &none          &none          &none             &kp HOME      &kp PG_DN  &kp PG_UP      &kp END        &none
             &kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      &none             &kp LEFT      &kp DOWN   &kp UP         &kp RIGHT      &none
             &kp LC(Z)      &kp LC(X)      &kp LC(C)      &kp LC(V)      &kp LC(LS(Z))     &kp LC(BSPC)  &kp DEL    &kp LC(DEL)    &kp LC(LEFT)   &kp LC(RIGHT)
-                                          &kp TAB        &kp BSPC                         &trans        &kp RET
+                                          &kp BSPC       &kp TAB                          &kp RET       &trans
             >;
         };
 
@@ -195,7 +195,7 @@
             &kp BSLH       &kp PRCNT      &kp AMPS       &kp PIPE       &kp CARET         &kp GRAVE  &kp LT         &kp GT         &kp LBKT       &kp RBKT
             &kp FSLH       &kp STAR       &kp PLUS       &kp MINUS      &kp EQUAL         &kp EXCL   &kp LPAR       &kp RPAR       &kp LBRC       &kp RBRC
             &kp SEMI       &kp TILDE      &kp QMARK      &kp COLON      &kp UNDER         &kp AT     &kp HASH       &kp DLLR       &kp DQT        &kp SQT
-                                          &kp TAB        &trans                           &kp SPACE  &kp RET
+                                          &trans         &kp TAB                          &kp RET    &kp SPACE
             >;
         };
 
@@ -205,7 +205,7 @@
             &none          &none          &none          &none          &none             &kp COMMA  &kp N7         &kp N8         &kp N9         &kp STAR
             &kp LGUI       &kp LALT       &kp LCTRL      &kp LSHFT      &none             &kp MINUS  &kp N4         &kp N5         &kp N6         &kp PLUS
             &none          &none          &none          &none          &none             &kp DOT    &kp N1         &kp N2         &kp N3         &kp FSLH
-                                          &trans         &kp BSPC                         &kp N0     &kp SPACE
+                                          &kp BSPC       &trans                           &kp N0     &kp SPACE
             >;
         };
 
@@ -215,7 +215,7 @@
             &kp PSCRN      &kp F7         &kp F8         &kp F9         &kp F10           &kp C_PREV    &kp C_VOL_DN   &kp C_VOL_UP   &kp C_NEXT     &kp C_PP
             &kp INS        &kp F4         &kp F5         &kp F6         &kp F11           &kp C_MUTE    &kp RSHFT      &kp RCTRL      &kp LALT       &kp RGUI
             &none          &kp F1         &kp F2         &kp F3         &kp F12           &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_CLR
-                                          &bootloader    &studio_unlock                   &none         &trans
+                                          &bootloader    &studio_unlock                   &trans        &none
             >;
         };
     };
