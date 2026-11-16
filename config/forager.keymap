@@ -2,10 +2,10 @@
  * Forager 34-key — Dawid's layout
  *
  * Thumbs (tap / hold), left to right:
- *   30 Bksp / SYM   (left outer, resting)  -> brackets on the right hand, operators on the left
- *   31 Tab  / NUM   (left inner)           -> numpad on the right hand
- *   32 Ent  / FUN   (right inner)          -> F-keys on the left hand (same shape as the numpad)
- *   33 Spc  / NAV   (right outer, resting) -> Vim arrows on the right hand (same-hand, by choice)
+ *   30 Bksp / SYM   (left, under T, resting)   -> brackets on the right hand, operators on the left
+ *   31 Tab  / NUM   (left, toward middle)      -> numpad on the right hand
+ *   32 Ent  / FUN   (right, toward middle)     -> F-keys on the left hand (same shape as the numpad)
+ *   33 Spc  / NAV   (right, under Y, resting)  -> Vim arrows on the right hand (same-hand, by choice)
  *
  * Space/NAV is tap-preferred with a prior-idle guard, so fast typing never
  * turns a Space into a silent cursor jump.
@@ -125,14 +125,14 @@
         };
         combo_altgr {
             timeout-ms = <50>;
-            key-positions = <30 31>;        /* both left thumbs: one-shot AltGr -> ą ę ś ć ż ź ł ó ń */
+            key-positions = <30 31>;        /* both left thumbs (Bksp + Tab): one-shot AltGr -> ą ę ś ć ż ź ł ó ń */
             bindings = <&sk RALT>;
             layers = <BASE>;
         };
         combo_launcher {
             timeout-ms = <50>;
             require-prior-idle-ms = <150>;
-            key-positions = <31 32>;        /* both inner thumbs: Ctrl+Space, as on the Glove80 */
+            key-positions = <31 32>;        /* both middle-side thumbs (Tab + Enter): Ctrl+Space, as on the Glove80 */
             bindings = <&kp LC(SPACE)>;
             layers = <BASE>;
         };
